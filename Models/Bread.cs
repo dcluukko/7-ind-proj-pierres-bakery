@@ -5,18 +5,18 @@ namespace Order.Models
 		public int LoafQuantity { get; set; }
 		public int LoafPrice { get; set; }
 
-		public Bread(int LoafQuantity, int loafPrice)
+		public Bread()
 		{
 				LoafQuantity = 0;
 				LoafPrice = 0;
 		}
-		public void AddBread(int LoafQuantity)
+		public void AddBread()
 		{
 			LoafQuantity ++;
 		}		
-		public void AddPrice(int loafPrice)
+		public void AddPrice()
 		{
-			loafPrice ++;
+			LoafPrice ++;
 		}
 	}
 

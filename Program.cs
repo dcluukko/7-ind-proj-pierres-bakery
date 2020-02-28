@@ -7,9 +7,9 @@ namespace Order
 {
 	public class Program
 	{
-		public static Bread breadOrder = new Bread();
 		// public static Pastry pastryOrder = new Pastry();
 		
+		public static Bread breadOrder = new Bread();
 		public static void Main()
 		{
 			Console.WriteLine("Welcome to Pierre's Bakery!");
@@ -28,7 +28,7 @@ namespace Order
 				string breadResponse = Console.ReadLine();
 				if (breadResponse.Equals("loaf"))
 				{
-					breadOrder.Addbread();
+					breadOrder.AddBread();
 				}
 				else if(breadResponse.Equals("special"))
 				{
