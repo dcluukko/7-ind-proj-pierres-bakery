@@ -1,19 +1,23 @@
-namespace Order.Models{
+namespace Order.Models	
+{
 	public class Bread
 	{
-		public int LoafNum {get; set;}
-		public int LoafPrice {get; set;}
+		public int LoafQuantity { get; set; }
+		public int LoafPrice { get; set; }
 
-		public Bread(int loafNum, int loafPrice)
+		public Bread(int LoafQuantity, int loafPrice)
 		{
-				LoafNum = loafNum;
-				LoafPrice = loafPrice;
+				LoafQuantity = 0;
+				LoafPrice = 0;
 		}
-		public void AddBread(int loafNum, int loafPrice)
+		public void AddBread(int LoafQuantity)
 		{
-			LoafNum += loafNum;
-			LoafPrice += loafPrice;
+			LoafQuantity ++;
 		}		
+		public void AddPrice(int loafPrice)
+		{
+			loafPrice ++;
+		}
 	}
 
 }
