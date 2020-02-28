@@ -12,24 +12,21 @@ namespace Order
 		public static void Main()
 		{
 			Console.WriteLine("Welcome to Pierre's Bakery!");
-			Console.WriteLine("type [start] to begin your order");
-			string orderBegin = Console.ReadLine();
 			Order();
 		}		
 			public static void Order()
 			{
-				if (orderBegin.Equals("start"))
-				{
-					Console.WriteLine("Type 'Bread' to begin a bread order OR type 'Pastry' to begin a pastry order.");
-					string breadTime = Console.ReadLine();
-					if (breadTime.Equals("Bread"))
+				Console.WriteLine("Type 'Bread' to begin a bread order OR type 'Pastry' to begin a pastry order.");
+				string orderBegin = Console.ReadLine();
+					if (orderBegin.Equals("Bread"))
 					{
 					// else if (orderBegin.Equals("Bread"))
 					ShowBreadOptions();
+					}
+					
 					Console.WriteLine("Type 'loaf' to add one loaf OR 'special' to get 2 loaves for the price of one.");
 					string breadResponse = Console.ReadLine();
-					}
-					else if (breadResponse.Equals("loaf"))
+					if (breadResponse.Equals("loaf"))
 					{
 						breadOrder.Addbread(1, 5);
 					}
@@ -37,7 +34,7 @@ namespace Order
 					{
 						breadOrder.AddBread(3, 10);
 					}
-				}
+				
 					
 					// else (orderBegin.Equals("Pastry")); //Semi-colon in question*
 					// {
