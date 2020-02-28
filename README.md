@@ -1,25 +1,42 @@
-# _Super Galactic Age Calculator_
+# _Pierre's Bakery_
 
-#### _A webpage that takes an Earthling's age and calculates it on Mercury, Venus, Mars and Jupiter. February 7th, 2020_
+#### _A C# console application that takes bread and pastry orders for a Pierre's Bakery._
 
 #### By _**Dana Luukko**_
 
 ## Description
 
-_A webpage that converts a person's age on Earth to their age on Mercury, Venus,Mars, and Jupiter. Taking into account their life expectancy on Earth, the webpage returns how many years they have left on each planet._
+_A C# Console App that takes in the users order type, pastry and bread, and the size of the pastry or bread order._
 
 ## Project Specifications
 
 |Behavior|Input|Output|
 |---|:---:|:---:|
-| User submits without input | text | Fail |
-| User submits any character that is not an integer| text | fail |
-| User submits number | text | Success |
-| User recieves their age in Mercury Years | Earth Years Age | Earth Years x .24 |
+| User recieves welcome prompt with price options, the option to start order | "Y" | User recieves prompt to choose bread or pastry |
+| User revieves prompt to choose bread or pastry | "Bread" | User recieves bread price board containing a price for 1 loaf of bread for $5 or a discount for buying 2 and getting the third loaf free. |
+| User revieves prompt to choose bread or pastry | "Pastry" | User recieves pastry price board containing a price for 1 pastry for $2 or buying 3 pastries for $5. |
+| User selects size option 1, standard price for one loaf of bread or one pastry item | "1" | User recieves total order with the added item |
+| User selects size option 2, the discounted price for buying multiples of a bread or pastry item | "2" | User recieves total order with the added item |
+| User selects size option 3 | "3" | User recieves total order with the added item |
 | User recieves their age in Venus Years | Earth Years Age | Earth Years x .62 |
 | User recieves their age in Mars Years | Earth Years Age | Earth Years x 1.88 |
 | User recieves their age in Jupiter Years | Earth Years Age | Earth Years x 11.86 |
 | User revieves their remaining years based on life expentency | Earth Years Age | 72 - Earth Years  |
+
+Create a C# console application for a bakery that includes the following functionality:
+
+There should be two classes: one for Bread and one for Pastry.
+
+When the user runs the application, they should receive a prompt with a welcome message along with the cost for both Bread and Pastry.
+
+A user should be able to specify how many loaves of Bread and how many Pastrys they'd like.
+
+The application will return the total cost of the order.
+
+Pierre offers the following deals:
+
+Bread: Buy 2, get 1 free. A single loaf costs $5.
+Pastry: Buy 1 for \$2 or 3 for $5.
 
 Code includes two custom classes and uses namespaces.
 Console application works correctly.
