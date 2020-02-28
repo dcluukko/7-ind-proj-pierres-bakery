@@ -7,9 +7,9 @@ namespace Order
 {
 	public class Program
 	{
-		// public static Pastry pastryOrder = new Pastry();
-		
-		public static Bread breadOrder = new Bread();
+		public static Pastry pastryOrder = new Pastry(0,0);
+		public static Bread breadOrder = new Bread(0,0);
+
 		public static void Main()
 		{
 			Console.WriteLine("Welcome to Pierre's Bakery!");
@@ -21,38 +21,35 @@ namespace Order
 				string orderBegin = Console.ReadLine();
 				if (orderBegin.Equals("Bread"))
 				{
-				// else if (orderBegin.Equals("Bread"))
-				ShowBreadOptions();
-				}
-				Console.WriteLine("Type 'loaf' to add one loaf OR 'special' to get 2 loaves for the price of one.");
-				string breadResponse = Console.ReadLine();
-				if (breadResponse.Equals("loaf"))
+					ShowBreadOptions();
+					Console.WriteLine("Type 'loaf' to add one loaf OR 'special' to get 2 loaves for the price of one.");
+					string breadResponse = Console.ReadLine();
+					if (breadResponse.Equals("loaf"))
+					{
+						breadOrder.AddBread(1, 5);
+					}
+					else if(breadResponse.Equals("special"))
+					{
+						breadOrder.AddBread(3, 10);
+					}
+				}	
+				else (orderBegin.Equals("Pastry")) //Semi-colon in question*
 				{
-					breadOrder.AddBread();
+					if (orderBegin.Equals("Pastry"))
+					{
+					ShowPastryOptions();
+					Console.WriteLine("Type 'pastry' to add one pastry OR 'special' to get 2 pastries for $3.");
+					string pastryResponse = Console.Readline();
+					}
+					else if (pastryResponse.Equals("loaf"))
+					{
+						pastryOrder.AddPastry(1, 5);
+					}
+					else if(pastryResponse.Equals("special"))
+					{
+						pastryOrder.AddPastry(3, 10);
+					}
 				}
-				else if(breadResponse.Equals("special"))
-				{
-					breadOrder.AddBread();
-				}
-				
-					
-					// else (orderBegin.Equals("Pastry")); //Semi-colon in question*
-					// {
-					// 	if (orderBegin.Equals("Pastry"))
-					// 	{
-					// 	ShowPastryOptions();
-					// 	Console.WriteLine("Type 'pastry' to add one pastry OR 'special' to get 2 pastries for $3.");
-					// 	string pastryResponse = Console.Readline();
-					// 	}
-					// 	else if (pastryResponse.Equals("loaf"))
-					// 	{
-					// 		pastryOrder.AddPastry(1, 5);
-					// 	}
-					// 	else if(pastryResponse.Equals("special"))
-					// 	{
-					// 		pastryOrder.AddPastry(3, 10);
-					// 	}
-					// }
 			}	
 			
 			
