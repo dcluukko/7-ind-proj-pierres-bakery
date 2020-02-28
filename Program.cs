@@ -32,7 +32,7 @@ namespace Order
 					SelectPastryOption();
 				}
 			}	
-
+				//PASTRY SELECT 
 				public static void SelectPastryOption()
 				{
 					Console.WriteLine("Type 'pastry' to add one pastry OR 'special' to get 2 pastries for $3.");
@@ -47,7 +47,7 @@ namespace Order
 						pastryOrder.AddPastry(3, 10);
 					}
 				}
-
+				//BREAD SELECT
 				public static void SelectBreadOption()
 				{
 					Console.WriteLine("Type 'loaf' to add one loaf OR 'special' to get 2 loaves for the price of one.");
@@ -61,14 +61,18 @@ namespace Order
 						breadOrder.AddBread(3, 10);
 					}
 				}	
+
+				//ORDER SHOW 
 				
 				
+				//BREAD OPTIONS
 				public static void ShowBreadOptions()
 				{
 					Console.WriteLine("=============Bread Price Board=============");
 					Console.WriteLine("One Loaf = $5");
 					Console.WriteLine("*SPECIAL* Buy Two Loaves Get One Free");
 				}
+				//PASTRY OPTIONS
 				public static void ShowPastryOptions()
 				{
 					Console.WriteLine("=============Pastry Price Board=============");
