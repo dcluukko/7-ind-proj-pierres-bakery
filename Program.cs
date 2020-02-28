@@ -15,6 +15,8 @@ namespace Order
 			Console.WriteLine("Welcome to Pierre's Bakery!");
 			Order();
 		}		
+
+			//Beginning Order Logic
 			public static void Order()
 			{
 				Console.WriteLine("Type 'Bread' to begin a bread order OR type 'Pastry' to begin a pastry order.");
@@ -22,6 +24,32 @@ namespace Order
 				if (orderBegin.Equals("Bread"))
 				{
 					ShowBreadOptions();
+					SelectBreadOption();
+				}	
+				else if (orderBegin.Equals("Pastry")) 
+				{
+					ShowPastryOptions();
+					SelectPastryOption();
+				}
+			}	
+
+				public static void SelectPastryOption()
+				{
+					Console.WriteLine("Type 'pastry' to add one pastry OR 'special' to get 2 pastries for $3.");
+					string pastryResponse = Console.ReadLine();
+					
+					if (pastryResponse.Equals("pastry"))
+					{
+						pastryOrder.AddPastry(1, 5);
+					}
+					else if(pastryResponse.Equals("special"))
+					{
+						pastryOrder.AddPastry(3, 10);
+					}
+				}
+
+				public static void SelectBreadOption()
+				{
 					Console.WriteLine("Type 'loaf' to add one loaf OR 'special' to get 2 loaves for the price of one.");
 					string breadResponse = Console.ReadLine();
 					if (breadResponse.Equals("loaf"))
@@ -33,26 +61,7 @@ namespace Order
 						breadOrder.AddBread(3, 10);
 					}
 				}	
-				else (orderBegin.Equals("Pastry")) //Semi-colon in question*
-				{
-					if (orderBegin.Equals("Pastry"))
-					{
-					ShowPastryOptions();
-					Console.WriteLine("Type 'pastry' to add one pastry OR 'special' to get 2 pastries for $3.");
-					string pastryResponse = Console.Readline();
-					}
-					else if (pastryResponse.Equals("loaf"))
-					{
-						pastryOrder.AddPastry(1, 5);
-					}
-					else if(pastryResponse.Equals("special"))
-					{
-						pastryOrder.AddPastry(3, 10);
-					}
-				}
-			}	
-			
-			
+				
 				
 				public static void ShowBreadOptions()
 				{
