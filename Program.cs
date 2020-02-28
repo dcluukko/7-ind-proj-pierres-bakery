@@ -13,12 +13,13 @@ namespace Order
 		public static void Main()
 		{
 			Console.WriteLine("Welcome to Pierre's Bakery!");
+			Console.WriteLine("=========================================");
 			Order();
 		}		
 
 			//Beginning Order Logic
 			public static void Order()
-			{
+			{	
 				Console.WriteLine("Type 'Bread' to begin a bread order OR type 'Pastry' to begin a pastry order.");
 				string orderBegin = Console.ReadLine();
 				if (orderBegin.Equals("Bread"))
@@ -41,10 +42,12 @@ namespace Order
 					if (pastryResponse.Equals("pastry"))
 					{
 						pastryOrder.AddPastry(1, 5);
+						OrderShow();
 					}
 					else if(pastryResponse.Equals("special"))
 					{
 						pastryOrder.AddPastry(3, 10);
+						OrderShow();
 					}
 				}
 				//BREAD SELECT
@@ -55,14 +58,73 @@ namespace Order
 					if (breadResponse.Equals("loaf"))
 					{
 						breadOrder.AddBread(1, 5);
+						OrderShow();
 					}
 					else if(breadResponse.Equals("special"))
 					{
 						breadOrder.AddBread(3, 10);
+						OrderShow();
 					}
 				}	
 
 				//ORDER SHOW 
+				public static void OrderShow() 
+				{
+					int totalCost = breadOrder.LoafPrice + pastryOrder.DanishPrice;
+					int loafTotal = breadOrder.LoafNum; 
+					int danishTotal = pastryOrder.DanishNum;
+					if (loafTotal > 0)
+					{
+					Console.WriteLine("Total Number of Loaves : " + breadOrder.LoafNum);
+					}
+
+					if (danishTotal > 0)
+					{
+					Console.WriteLine("Total Pastry Items: " + pastryOrder.DanishNum);
+					}
+
+					Console.WriteLine("Total Cost: $" + totalCost);
+					Console.WriteLine("====================================");
+					Console.WriteLine("To select another pastry item type [P], To select bread item type [B]To check out type [checkout]");
+					string decideCheckoutOrSelect = Console.ReadLine();
+					if (decideCheckoutOrSelect.Equals("P") || decideCheckoutOrSelect.Equals("p"))
+					{
+						SelectBreadOption();
+					}
+					else if (decideCheckoutOrSelect.Equals("B") || decideCheckoutOrSelect.Equals("b"))
+					{
+						SelectBreadOption();
+					}
+					else if (decideCheckoutOrSelect.Equals("Checkout") || decideCheckoutOrSelect.Equals("checkout"))
+					{
+						Checkout();
+					}
+				
+
+					Order();
+				}
+
+				//CHECKOUT 
+				public static void Checkout()
+				{
+					int totalCost = breadOrder.LoafPrice + pastryOrder.DanishPrice;
+					int loafTotal = breadOrder.LoafNum; 
+					int danishTotal = pastryOrder.DanishNum;
+					if (loafTotal > 0)
+					{
+					Console.WriteLine("Total Number of Loaves : " + breadOrder.LoafNum);
+					}
+
+					if (danishTotal > 0)
+					{
+					Console.WriteLine("Total Pastry Items: " + pastryOrder.DanishNum);
+					}
+
+					Console.WriteLine("Total Cost: $" + totalCost);
+					Console.WriteLine("Thank you for shopping with Pierre's Bakery! Brûle en enfer!");
+					Main();
+
+				}
 				
 				
 				//BREAD OPTIONS

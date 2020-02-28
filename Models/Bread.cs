@@ -14,7 +14,11 @@ namespace Order.Models	{
 			LoafNum += loafNum;
 			LoafPrice += loafPrice;
 		}		
-		
+		public void BreadSpecial(int loafNum, int loafPrice)
+		{
+			int specialLoaf = LoafNum / 3;
+			Console.WriteLine(specialLoaf);
+		}
 	}
 
 }

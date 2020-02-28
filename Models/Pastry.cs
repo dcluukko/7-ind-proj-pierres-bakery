@@ -14,6 +14,7 @@ namespace Order.Models {
 			DanishNum += danishNum;
 			DanishPrice += danishPrice;
 		}
-			
+		
+		
 	}
 }
