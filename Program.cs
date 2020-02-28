@@ -7,54 +7,57 @@ namespace Order
 {
 	public class Program
 	{
+		public static Bread breadOrder = new Bread(0,0);
+		// public static Pastry pastryOrder = new Pastry();
 		public static void Main()
 		{
-				Bread breadOrder = new Bread(0, 0);
-				Pastry pastryOrder = new Pastry(0, 0);
-
-				List<Bread> Breads = new List<Bread>(100) {breadOrder};
-				List<Pastry> Pastrys = new List<Pastry>(100) {pastryOrder};
-				
-
-				Console.WriteLine("Welcome to Pierre's Bakery!");
-				Console.WriteLine("Type 'Bread' to begin a bread order OR type 'Pastry' to begin a pastry order.");
-				string orderBegin = Console.ReadLine();
-				if (orderBegin.Equals("Bread"))
+			Console.WriteLine("Welcome to Pierre's Bakery!");
+			Console.WriteLine("type [start] to begin your order");
+			string orderBegin = Console.ReadLine();
+			Order();
+		}		
+			public static void Order()
+			{
+				if (orderBegin.Equals("start"))
 				{
-					if (orderBegin.Equals("Bread"))
+					Console.WriteLine("Type 'Bread' to begin a bread order OR type 'Pastry' to begin a pastry order.");
+					string breadTime = Console.ReadLine();
+					if (breadTime.Equals("Bread"))
 					{
+					// else if (orderBegin.Equals("Bread"))
 					ShowBreadOptions();
 					Console.WriteLine("Type 'loaf' to add one loaf OR 'special' to get 2 loaves for the price of one.");
 					string breadResponse = Console.ReadLine();
 					}
 					else if (breadResponse.Equals("loaf"))
 					{
-						bread.Addbread(1, 5);
+						breadOrder.Addbread(1, 5);
 					}
 					else if(breadResponse.Equals("special"))
 					{
-						bread.AddBread(3, 10);
-					}
-				}	
-				else (orderBegin.Equals("Pastry")); //Semi-colon in question*
-				{
-					if (orderBegin.Equals("Pastry"))
-					{
-					ShowPastryOptions();
-					Console.WriteLine("Type 'pastry' to add one pastry OR 'special' to get 2 pastries for $3.");
-					string pastryResponse = Console.Readline();
-					}
-					else if (pastryResponse.Equals("loaf"))
-					{
-						pastry.AddPastry(1, 5);
-					}
-					else if(pastryResponse.Equals("special"))
-					{
-						pastry.AddPastry(3, 10);
+						breadOrder.AddBread(3, 10);
 					}
 				}
-				
-		}	
+					
+					// else (orderBegin.Equals("Pastry")); //Semi-colon in question*
+					// {
+					// 	if (orderBegin.Equals("Pastry"))
+					// 	{
+					// 	ShowPastryOptions();
+					// 	Console.WriteLine("Type 'pastry' to add one pastry OR 'special' to get 2 pastries for $3.");
+					// 	string pastryResponse = Console.Readline();
+					// 	}
+					// 	else if (pastryResponse.Equals("loaf"))
+					// 	{
+					// 		pastryOrder.AddPastry(1, 5);
+					// 	}
+					// 	else if(pastryResponse.Equals("special"))
+					// 	{
+					// 		pastryOrder.AddPastry(3, 10);
+					// 	}
+					// }
+			}	
+			
 				
 				public static void ShowBreadOptions()
 				{
@@ -68,6 +71,6 @@ namespace Order
 					Console.WriteLine("One Pastry = $2");
 					Console.WriteLine("*SPECIAL* Buy Three Pastries for $5");
 				}
-				
+					
 	}
 }
