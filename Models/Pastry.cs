@@ -1,19 +1,25 @@
 namespace Order.Models {
 	public class Pastry
 	{
+		public int PastryResponse;
 		public int DanishNum {get; set;}
 		public int DanishPrice {get; set;}
 
-		public Pastry( int danishNum, int danishPrice)
+
+		public Pastry( int pastryResponse, int danishNum)
 		{
+			PastryResponse = pastryResponse;
 			DanishNum = danishNum;
-			DanishPrice = danishPrice;
+			DanishPrice = 2;
 		}
-			public void AddPastry(int danishNum, int danishPrice)
+			public void OrderPastry(int danishNum)
 		{
-			DanishNum += danishNum;
-			DanishPrice += danishPrice;
+			DanishNum * pastryResponse;
 		}
+		 public void CalcPastryCost(int danishPrice)
+		 {
+			 DanishPrise * pastryResponse;
+		 }
 		
 		
 	}

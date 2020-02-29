@@ -12,6 +12,7 @@ namespace Order
 
 		public static void Main()
 		{
+			Console.WriteLine("=========================================");
 			Console.WriteLine("Welcome to Pierre's Bakery!");
 			Console.WriteLine("=========================================");
 			Order();
@@ -36,33 +37,29 @@ namespace Order
 				//PASTRY SELECT 
 				public static void SelectPastryOption()
 				{
-					Console.WriteLine("Type 'pastry' to add one pastry OR 'special' to get 2 pastries for $3.");
-					string pastryResponse = Console.ReadLine();
+					Console.WriteLine("How many pastries would you like?");
+					int pastryResponse = int.Parse(Console.ReadLine());
 					
-					if (pastryResponse.Equals("pastry"))
+					if (pastryResponse > 0)
 					{
-						pastryOrder.AddPastry(1, 2);
+						pastryOrder.OrderPastry(pastryResponse);
 						OrderShow();
 					}
-					else if(pastryResponse.Equals("special"))
+					else 
 					{
-						pastryOrder.AddPastry(3, 5);
-						OrderShow();
+						SelectPastryOption();
 					}
+					
+				
 				}
 				//BREAD SELECT
 				public static void SelectBreadOption()
 				{
 					Console.WriteLine("Type 'loaf' to add one loaf OR 'special' to get 2 loaves for the price of one.");
-					string breadResponse = Console.ReadLine();
-					if (breadResponse.Equals("loaf"))
+					int breadResponse = int.Parse(Console.ReadLine());
+					if (breadResponse > 0)
 					{
-						breadOrder.AddBread(1, 5);
-						OrderShow();
-					}
-					else if(breadResponse.Equals("special"))
-					{
-						breadOrder.AddBread(3, 10);
+						breadOrder.OrderBread(breadResponse);
 						OrderShow();
 					}
 				}	
@@ -111,7 +108,6 @@ namespace Order
 
 					int loafTotal = breadOrder.LoafNum; 
 					int danishTotal = pastryOrder.DanishNum;
-					Console.WriteLine(checkoutCost);
 					if (loafTotal > 0)
 					{
 					Console.WriteLine("Total Number of Loaves : " + breadOrder.LoafNum);
