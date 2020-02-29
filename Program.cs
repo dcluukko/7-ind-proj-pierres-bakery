@@ -41,12 +41,12 @@ namespace Order
 					
 					if (pastryResponse.Equals("pastry"))
 					{
-						pastryOrder.AddPastry(1, 5);
+						pastryOrder.AddPastry(1, 2);
 						OrderShow();
 					}
 					else if(pastryResponse.Equals("special"))
 					{
-						pastryOrder.AddPastry(3, 10);
+						pastryOrder.AddPastry(3, 5);
 						OrderShow();
 					}
 				}
@@ -89,7 +89,7 @@ namespace Order
 					string decideCheckoutOrSelect = Console.ReadLine();
 					if (decideCheckoutOrSelect.Equals("P") || decideCheckoutOrSelect.Equals("p"))
 					{
-						SelectBreadOption();
+						SelectPastryOption();
 					}
 					else if (decideCheckoutOrSelect.Equals("B") || decideCheckoutOrSelect.Equals("b"))
 					{
@@ -108,8 +108,10 @@ namespace Order
 				public static void Checkout()
 				{
 					int totalCost = breadOrder.LoafPrice + pastryOrder.DanishPrice;
+
 					int loafTotal = breadOrder.LoafNum; 
 					int danishTotal = pastryOrder.DanishNum;
+					Console.WriteLine(checkoutCost);
 					if (loafTotal > 0)
 					{
 					Console.WriteLine("Total Number of Loaves : " + breadOrder.LoafNum);
