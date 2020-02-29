@@ -18,7 +18,7 @@ namespace Order.Models {
 		}
 		 public void CalcPastryCost(int danishPrice)
 		 {
-			 DanishPrise * pastryResponse;
+			 DanishPrice * pastryResponse;
 		 }
 		
 		
