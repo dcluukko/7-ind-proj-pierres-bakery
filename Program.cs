@@ -15,6 +15,7 @@ namespace Order
 			Console.WriteLine("=========================================");
 			Console.WriteLine("Welcome to Pierre's Bakery!");
 			Console.WriteLine("=========================================");
+			
 			Order();
 		}		
 
@@ -38,11 +39,11 @@ namespace Order
 				public static void SelectPastryOption()
 				{
 					Console.WriteLine("How many pastries would you like?");
-					int pastryResponse = int.Parse(Console.ReadLine());
+					int pastryInput = int.Parse(Console.ReadLine());
 					
-					if (pastryResponse > 0)
+					if (pastryInput > 0)
 					{
-						pastryOrder.OrderPastry(pastryResponse);
+						pastryOrder.OrderPastry(pastryInput);
 						OrderShow();
 					}
 					else 
@@ -56,10 +57,10 @@ namespace Order
 				public static void SelectBreadOption()
 				{
 					Console.WriteLine("Type 'loaf' to add one loaf OR 'special' to get 2 loaves for the price of one.");
-					int breadResponse = int.Parse(Console.ReadLine());
-					if (breadResponse > 0)
+					int breadInput = int.Parse(Console.ReadLine());
+					if (breadInput > 0)
 					{
-						breadOrder.OrderBread(breadResponse);
+						breadOrder.OrderBread(breadInput);
 						OrderShow();
 					}
 				}	

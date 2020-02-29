@@ -1,25 +1,33 @@
 namespace Order.Models {
 	public class Pastry
 	{
-		public int PastryResponse;
+		public int PastryInput;
 		public int DanishNum {get; set;}
 		public int DanishPrice {get; set;}
 
 
-		public Pastry( int pastryResponse, int danishNum)
+		public Pastry( int pastryInput, int danishNum)
 		{
-			PastryResponse = pastryResponse;
+			PastryInput = pastryInput;
 			DanishNum = danishNum;
 			DanishPrice = 2;
 		}
-			public void OrderPastry(int danishNum)
+			public void OrderPastry(int pastryInput)
 		{
-			DanishNum * pastryResponse;
+			danishNum * pastryInput;
+			return CurrentPastryOrderTotal;
 		}
 		 public void CalcPastryCost(int danishPrice)
 		 {
-			 DanishPrice * pastryResponse;
+			 DanishPrice * pastryInput;
+			 return pastryCalcCost;
 		 }
+		//FUNCTION ON PROPERTY
+		//FUNCTION CALLING GETTING AND SETTING
+		 public int CalcPastryCost()
+		{
+
+		}
 		
 		
 	}
