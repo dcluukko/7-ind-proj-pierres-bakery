@@ -12,9 +12,17 @@ namespace Order
 		public static void Main()
 		{
 			int orderSum = 0;
-			Console.WriteLine("=========================================");
-			Console.WriteLine("Welcome to Pierre's Bakery!");
-			Console.WriteLine("=========================================");
+			Console.ForegroundColor = ConsoleColor.DarkYellow;
+			Console.WriteLine("===========================================================================================================================================");
+			Console.WriteLine(@"
+    ______   __     ______     ______     ______     ______     ______        ______     ______     __  __     ______     ______     __  __    
+   /\  == \ /\ \   /\  ___\   /\  == \   /\  == \   /\  ___\   /\  ___\      /\  == \   /\  __ \   /\ \/ /    /\  ___\   /\  == \   /\ \_\ \   
+   \ \  _-/ \ \ \  \ \  __\   \ \  __<   \ \  __<   \ \  __\   \ \___  \     \ \  __<   \ \  __ \  \ \  _-.  \ \  __\   \ \  __<   \ \____ \  
+    \ \_\    \ \_\  \ \_____\  \ \_\ \_\  \ \_\ \_\  \ \_____\  \/\_____\     \ \_____\  \ \_\ \_\  \ \_\ \_\  \ \_____\  \ \_\ \_\  \/\_____\ 
+     \/_/     \/_/   \/_____/   \/_/ /_/   \/_/ /_/   \/_____/   \/_____/      \/_____/   \/_/\/_/   \/_/\/_/   \/_____/   \/_/ /_/   \/_____/ 
+                                                                                                                                               
+");
+			Console.WriteLine("=================================================================================================================================================");
 			
 			Order(orderSum);
 		}		
@@ -22,14 +30,15 @@ namespace Order
 			//Beginning Order Logic
 			public static void Order(int orderSum)
 			{	
+				Console.ForegroundColor = ConsoleColor.Blue;
 				Console.WriteLine("Type 'Bread' to begin a bread order OR type 'Pastry' to begin a pastry order.");
 				string orderBegin = Console.ReadLine();
-				if (orderBegin.Equals("Bread"))
+				if (orderBegin.Equals("Bread") || orderBegin.Equals("bread"))
 				{
 					ShowBreadOptions();
 					SelectBreadOption(orderSum);
 				}	
-				else if (orderBegin.Equals("Pastry")) 
+				else if (orderBegin.Equals("Pastry") || orderBegin.Equals("pastry")) 
 				{
 					ShowPastryOptions();
 					SelectPastryOption(orderSum);
@@ -38,31 +47,36 @@ namespace Order
 				//PASTRY SELECT 
 				public static void SelectPastryOption(int orderSum)
 				{
+					Console.ForegroundColor = ConsoleColor.Green;
 					Console.WriteLine("How many pastries would you like?");
 					int danishInput = int.Parse(Console.ReadLine());
 					int danishTotal = pastryOrder.DanishAdd(danishInput);
 					danishTotal += orderSum;
-					Console.WriteLine("Total Number of Loaves : " + danishInput);
+					Console.ForegroundColor = ConsoleColor.Yellow;
+					Console.WriteLine("Total Number of Pastries : " + danishInput);
 					Console.WriteLine("Total Cost: $" + danishTotal);
-					OrderShow(orderSum);
+					OrderShow(danishTotal);
 				
 				}
 				//BREAD SELECT
 				public static void SelectBreadOption(int orderSum)
 				{
+					Console.ForegroundColor = ConsoleColor.Green;
 					Console.WriteLine("How many loaves would you like?");
 					int loafInput = int.Parse(Console.ReadLine());
 					int loafTotal = breadOrder.LoafAdd(loafInput);
 					loafTotal += orderSum;
+					Console.ForegroundColor = ConsoleColor.Yellow;
 					Console.WriteLine("Total Number of Loaves : " + loafInput);
 					Console.WriteLine("Total Cost: $" + loafTotal);
 				
-					OrderShow(orderSum);
+					OrderShow(loafTotal);
 				}	
 
 				//ORDER SHOW 
 				public static void OrderShow(int orderSum) 
 				{
+					Console.ForegroundColor = ConsoleColor.Magenta;
 					Console.WriteLine("====================================");
 					Console.WriteLine("To select another pastry item type [P], To select bread item type [B]To check out type [checkout]");
 					string decideCheckoutOrSelect = Console.ReadLine();
@@ -82,25 +96,20 @@ namespace Order
 				}
 
 				//CHECKOUT 
-				public static void Checkout(int orderSum)
+				public static void Checkout(int loafTotal)
 				{
-					int totalCost = orderSum;
-					
-				
-				// 	if (loafTotal > 0)
-				// 	{
-				// 	Console.WriteLine("Total Number of Loaves : " + breadOrder.LoafNum);
-				// 	}
+					// if (loafTotal > 0)
+					// {
+					// Console.WriteLine("Total Number of Loaves : " + loafInput);;
+					// }
 
-				// 	if (danishTotal > 0)
-				// 	{
-				// 	Console.WriteLine("Total Pastry Items: " + pastryOrder.DanishNum);
-				// 	}
+					// if (danishTotal > 0)
+					// {
+					// Console.WriteLine("Total Number of Pastries : " + danishInput);
+					// }
 
-					Console.WriteLine("Total Cost: $" + totalCost);
+					Console.WriteLine("Total Cost: $" + loafTotal);
 					Console.WriteLine("Thank you for shopping with Pierre's Bakery! Brûle en enfer!");
-					Main();
-
 				}
 				
 				

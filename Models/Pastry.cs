@@ -2,7 +2,6 @@ namespace Order.Models {
 	public class Pastry
 	{
 		public int DanishPrice = 2;
-		public int LoafInput {get; set;}
 	
 		public int DanishAdd(int x)
 		{
