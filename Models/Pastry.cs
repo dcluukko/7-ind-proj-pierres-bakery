@@ -1,34 +1,24 @@
 namespace Order.Models {
 	public class Pastry
 	{
-		public int PastryInput;
-		public int DanishNum {get; set;}
-		public int DanishPrice {get; set;}
-
-
-		public Pastry( int pastryInput, int danishNum)
+		public int DanishPrice = 2;
+		public int LoafInput {get; set;}
+	
+		public int DanishAdd(int x)
 		{
-			PastryInput = pastryInput;
-			DanishNum = danishNum;
-			DanishPrice = 2;
+			int danishTotal = 0;
+			for(int i = 1; i <= x; i++)
+			{
+				if	(i % 3 == 0)
+				{
+					danishTotal += 1;
+				} 
+				else 
+				{
+					danishTotal += DanishPrice;
+				}
+			}
+			return danishTotal;
 		}
-			public void OrderPastry(int pastryInput)
-		{
-			danishNum * pastryInput;
-			return CurrentPastryOrderTotal;
-		}
-		 public void CalcPastryCost(int danishPrice)
-		 {
-			 DanishPrice * pastryInput;
-			 return pastryCalcCost;
-		 }
-		//FUNCTION ON PROPERTY
-		//FUNCTION CALLING GETTING AND SETTING
-		 public int CalcPastryCost()
-		{
-
-		}
-		
-		
 	}
 }

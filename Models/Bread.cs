@@ -1,27 +1,23 @@
 namespace Order.Models	{
 	public class Bread
 	{
-		public int BreadInput {get; set;}
-		public int LoafNum {get; set;}
-		public int LoafPrice {get; set;}
+		public int LoafPrice = 5;
 
-		public Bread(int loafNum, int breadInput)
+		public int LoafAdd(int x)
 		{
-				BreadInput = breadInput;
-				LoafNum = loafNum;
-				LoafPrice = 5;
-
-		}
-		public void orderBread(int loafNum)
-		{
-			LoafNum * breadInput;
-			return CurrentBreadOrderTotal
-		}		
-		public void calcBreadCost(int loafPrice)
-		{
-			LoafPrice * breadInput;
-			return breadCalcCost;
+			int loafTotal = 0;
+			for(int i=1; i <= x; i++)
+			{
+				if	(i % 3 != 0)
+				{
+					loafTotal += LoafPrice;
+				} 
+				else 
+				{
+					loafTotal += 0;
+				}
+			}
+			return loafTotal;
 		}
 	}
-
 }
