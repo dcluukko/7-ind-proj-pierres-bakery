@@ -3,18 +3,17 @@ namespace Order.Models {
 	{
 		public int DanishPrice = 2;
 		public int DanishNum {get; set;}
-		public int DanishCost {get; set;}
+		public int DanishTotal {get; set;}
 
-		// public Pastry ( int danishNum, int danishCost)
-		// {
-		// 	DanishNum = danishNum;
-		// 	DanishCost = danishCost;
-		// }
+		public Pastry ( int danishNum)
+		{
+			DanishNum += danishNum;
+		}
 	
-		public int DanishAdd(int x)
+		public int DanishAdd(int danishNum)
 		{
 			int danishTotal = 0;
-			for(int i = 1; i <= x; i++)
+			for(int i = 1; i <= danishNum; i++)
 			{
 				if	(i % 3 == 0)
 				{

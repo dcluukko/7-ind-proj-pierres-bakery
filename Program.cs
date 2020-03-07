@@ -7,8 +7,8 @@ namespace Order
 {
 	public class Program
 	{
-		public static Pastry pastryOrder = new Pastry();
-		public static Bread breadOrder = new Bread();
+		public static Pastry pastryOrder = new Pastry(0);
+		public static Bread breadOrder = new Bread(0);
 		public static void Main()
 		{
 			int orderSum = 0;
@@ -99,17 +99,9 @@ namespace Order
 				//CHECKOUT 
 				public static void Checkout(int orderSum)
 				{
-					// if (loafTotal > 0)
-					// {
-					// Console.WriteLine("Total Number of Loaves : " + loafInput);;
-					// }
-
-					// if (danishTotal > 0)
-					// {
-					// Console.WriteLine("Total Number of Pastries : " + danishInput);
-					// }
-
+					Console.ForegroundColor = ConsoleColor.Yellow;
 					Console.WriteLine("Total Cost: $" + orderSum);
+					Console.ForegroundColor = ConsoleColor.DarkCyan;
 					Console.WriteLine("Thank you for shopping with Pierre's Bakery! Brûle en enfer!");
 				}
 				
