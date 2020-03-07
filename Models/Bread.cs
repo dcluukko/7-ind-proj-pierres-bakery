@@ -1,7 +1,14 @@
 namespace Order.Models	{
 	public class Bread
 	{
+		public int LoafNum{get; set;}
 		public int LoafPrice = 5;
+
+		// public Bread(int loafNum)
+		// {
+		// 	LoafNum += loafNum;
+		// 	// LoafCost = loafCost;
+		// }
 
 		public int LoafAdd(int x)
 		{

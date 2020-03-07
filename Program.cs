@@ -51,11 +51,11 @@ namespace Order
 					Console.WriteLine("How many pastries would you like?");
 					int danishInput = int.Parse(Console.ReadLine());
 					int danishTotal = pastryOrder.DanishAdd(danishInput);
-					danishTotal += orderSum;
+					orderSum += danishTotal;
 					Console.ForegroundColor = ConsoleColor.Yellow;
 					Console.WriteLine("Total Number of Pastries : " + danishInput);
 					Console.WriteLine("Total Cost: $" + danishTotal);
-					OrderShow(danishTotal);
+					OrderShow(orderSum);
 				
 				}
 				//BREAD SELECT
@@ -65,12 +65,12 @@ namespace Order
 					Console.WriteLine("How many loaves would you like?");
 					int loafInput = int.Parse(Console.ReadLine());
 					int loafTotal = breadOrder.LoafAdd(loafInput);
-					loafTotal += orderSum;
+					orderSum += loafTotal;
 					Console.ForegroundColor = ConsoleColor.Yellow;
 					Console.WriteLine("Total Number of Loaves : " + loafInput);
 					Console.WriteLine("Total Cost: $" + loafTotal);
 				
-					OrderShow(loafTotal);
+					OrderShow(orderSum);
 				}	
         
 				
@@ -97,7 +97,7 @@ namespace Order
 				}
 
 				//CHECKOUT 
-				public static void Checkout(int loafTotal)
+				public static void Checkout(int orderSum)
 				{
 					// if (loafTotal > 0)
 					// {
@@ -109,7 +109,7 @@ namespace Order
 					// Console.WriteLine("Total Number of Pastries : " + danishInput);
 					// }
 
-					Console.WriteLine("Total Cost: $" + loafTotal);
+					Console.WriteLine("Total Cost: $" + orderSum);
 					Console.WriteLine("Thank you for shopping with Pierre's Bakery! Brûle en enfer!");
 				}
 				
